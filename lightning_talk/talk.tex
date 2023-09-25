@@ -8,6 +8,7 @@
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
 \usepackage{makecell}
+% \usepackage[table]{xcolor}
 
 \definecolor{bitcoinorange}{RGB}{255,165,0}
 
@@ -55,7 +56,7 @@
 
 \section{Infrastructure Tree}
 
-\begin{frame}[t]{Heirarchy in the internet?}
+\begin{frame}[t]{Hierarchy in the internet?}
 
   \begin{tikzpicture}[remember picture,overlay]
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
@@ -93,15 +94,30 @@
   \tiny %\footnotesize % or \small
   \begin{tabular}{|c|p{4.25cm}|}
     \hline
+    % \rowcolor{gray!95} % Match IXP node color
     \textbf{Term} & \textbf{Explanation} \\
     \hline
+    % \rowcolor{gray!70} % Match T1 node color
     AS & \mbox{Autonomous System (AT\&T Services, Inc.)} \\
+    \hline
     IXP & Internet Exchange Point (DE-CIX) \\
+    \hline
+    % \rowcolor{gray!50} % Match T2 node color
     T1 & International ISP (CenturyLink) \\
+    \hline
+    % \rowcolor{gray!30} % Match T3 node color
     T2 & Regional ISP (Orange) \\
+    \hline
+    % \rowcolor{gray!30} % Match T3 node color
     CDN & Content Delivery Network (Cloudflare) \\
+    \hline
+    % \rowcolor{bitcoinorange} % Match P node color
     CP & Content Provider (Netflix) \\
+    \hline
+    % \rowcolor{gray!30} % Match T3 node color
     T3 & Local ISP \\
+    \hline
+    % \rowcolor{bitcoinorange} % Match P node color
     P & Pleb \\
     \hline
   \end{tabular}
@@ -177,9 +193,7 @@
   \caption{Also the internet}
 \end{figure}
 
-
   \end{minipage}%
-
 \end{frame}
 
 \section{Tradeoffs}
