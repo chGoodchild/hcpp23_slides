@@ -7,7 +7,7 @@
 \usetikzlibrary{positioning}
 \usepackage[T1]{fontenc}
 \usepackage{lmodern}
-
+\usepackage{makecell}
 
 \definecolor{bitcoinorange}{RGB}{255,165,0}
 
@@ -55,13 +55,15 @@
 
 \section{Infrastructure Tree}
 
-\begin{frame}{Introduction}
+\begin{frame}[t]{Heirarchy in the internet?}
 
   \begin{tikzpicture}[remember picture,overlay]
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
+
   \begin{minipage}[t]{0.4\textwidth} % Adjust the width as needed
+    \vspace*{-1cm} % Adjust the length as needed
 \begin{figure}
   \centering
   \begin{tikzpicture}[-latex, auto, node distance=1cm and 2cm, semithick,
@@ -81,36 +83,33 @@
     \path (AS2) edge [bend left=25] node[above] {} (AS3);
     \path (AS3) edge [bend left=25] node[below] {} (AS2);
   \end{tikzpicture}
-  \caption{Flat Hierarchy}
+  \caption{The internet}
   \end{figure}
 
-  \begin{table}[htbp]
+  \vspace*{-0.5cm} % Adjust the length as needed
+
+\begin{table}[htbp]
   \centering
-  \begin{tabular}{|c|p{8cm}|}
+  \tiny %\footnotesize % or \small
+  \begin{tabular}{|c|p{4.25cm}|}
     \hline
     \textbf{Term} & \textbf{Explanation} \\
     \hline
-    AS & Autonomous System \\
-    \hline
-    IXP & Internet Exchange Point \\
-    \hline
-    CDN & Content Delivery Network \\
-    CP & Content Provider \\
-    \hline
-    T1 & Tier 1 Internet Service Provider \\
-    T2 & Tier 2 Internet Service Provider \\
-    T3 & Tier 3 Internet Service Provider \\
-    \hline
+    AS & \mbox{Autonomous System (AT\&T Services, Inc.)} \\
+    IXP & Internet Exchange Point (DE-CIX) \\
+    T1 & International ISP (CenturyLink) \\
+    T2 & Regional ISP (Orange) \\
+    CDN & Content Delivery Network (Cloudflare) \\
+    CP & Content Provider (Netflix) \\
+    T3 & Local ISP \\
     P & Pleb \\
     \hline
   \end{tabular}
-  \caption{Table of Terms and Explanations}
 \end{table}
-
 
   \end{minipage}%
   \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
-
+    \vspace*{-0.7cm} % Adjust the length as needed
 \begin{figure}
   \centering
   \begin{tikzpicture}[-latex, auto, semithick,
@@ -175,7 +174,7 @@
     };
 
   \end{tikzpicture}
-  \caption{Internet Hierarchy}
+  \caption{Also the internet}
 \end{figure}
 
 
