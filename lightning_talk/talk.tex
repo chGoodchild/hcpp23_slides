@@ -54,31 +54,39 @@
 \section{Infrastructure Tree}
 
 \begin{frame}{Introduction}
-  This is the introduction slide.
 
   \begin{tikzpicture}[remember picture,overlay]
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
-  \begin{center}
-    \begin{tikzpicture}[-latex, auto, node distance=1cm and 2cm, semithick,
-      state/.style={circle, top color=white, bottom color=bitcoinorange,
-      draw=bitcoinorange, text=blue, minimum width=1cm}]
+  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[-latex, auto, node distance=1cm and 2cm, semithick,
+    state/.style={circle, top color=white, bottom color=bitcoinorange,
+    draw=bitcoinorange, text=blue, minimum width=1cm}]
 
-      \node[state] (AS1) {AS1};
-      \node[state] (AS2) [above=of AS1] {AS2};
-      \node[state] (AS3) [below=of AS1] {AS3};
+    \node[state] (AS1) {AS1};
+    \node[state] (AS2) [above right=of AS1] {AS2};
+    \node[state] (AS3) [below right=of AS1] {AS3};
 
-      \path (AS1) edge [bend left=25] node[above] {} (AS2);
-      \path (AS2) edge [bend left=25] node[below] {} (AS1);
+    \path (AS1) edge [bend left=25] node[above] {} (AS2);
+    \path (AS2) edge [bend left=25] node[below] {} (AS1);
 
-      \path (AS1) edge [bend left=25] node[above] {} (AS3);
-      \path (AS3) edge [bend left=25] node[below] {} (AS1);
+    \path (AS1) edge [bend left=25] node[above] {} (AS3);
+    \path (AS3) edge [bend left=25] node[below] {} (AS1);
 
-      \path (AS2) edge [bend left=25] node[above] {} (AS3);
-      \path (AS3) edge [bend left=25] node[below] {} (AS2);
-    \end{tikzpicture}
-  \end{center}
+    \path (AS2) edge [bend left=25] node[above] {} (AS3);
+    \path (AS3) edge [bend left=25] node[below] {} (AS2);
+  \end{tikzpicture}
+  \caption{Internet as Autonomous Systems (AS) in a \textbf{flat hierarchy}}
+\end{figure}
+  \end{minipage}%
+  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+
+Test bla bla
+
+  \end{minipage}%
 
 \end{frame}
 
@@ -86,7 +94,6 @@
 
 
 \begin{frame}{Introduction}
-  This is the introduction slide.
 
   \begin{tikzpicture}[remember picture,overlay]
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
