@@ -3,6 +3,7 @@
 \usepackage{circuitikz}
 \usetikzlibrary{arrows}
 
+
 % Define a subcircuit 'divider' with input and output
 \ctikzsubcircuitdef{divider}{in, out}{%
   coordinate (#1-in) to[R, l=$Z_s$, name=#1-rh, -*] ++(2,0)
@@ -18,36 +19,72 @@
 
 
 % Title page information
-\title{Your Presentation Title}
-\author{Your Name}
-\date{\today}
+\title{Self Sovereign Communications Infrastructure?}
+\author{Chandran}
+% \date{\today}
+\date{September 29, 2023}
 
 \begin{document}
 
 \begin{frame}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
   \titlepage
 \end{frame}
 
+
 \begin{frame}{Outline}
-  \tableofcontents
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
+
+  \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
+    \tableofcontents
+  \end{minipage}%
+  \begin{minipage}[t]{0.4\textwidth} % Adjust the width as needed
+    \begin{tikzpicture}
+      % Define triangle coordinates
+      \coordinate (A) at (0,0);
+      \coordinate (B) at (2,0);
+      \coordinate (C) at (1,2);
+
+      % Draw the isosceles triangle
+      \draw[fill=orange] (A) -- (B) -- (C) -- cycle;
+
+      % Label the corners
+      \node[below] at (A) {$Range$};
+      \node[below] at (B) {$Permission$};
+      \node[above] at (C) {$Bandwidth$};
+    \end{tikzpicture}
+  \end{minipage}
 \end{frame}
 
-\section{Introduction}
+
+\section{Tradeoffs}
+
 
 \begin{frame}{Introduction}
   This is the introduction slide.
-\begin{tikzpicture}
-  % Draw the subcircuit 'divider' twice with different labels
-  \draw (0,0) \mydiv{a}{in}{}{};
-  \draw (a-out) -- \mydiv{b}{in}{}{};
-\end{tikzpicture}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
 
 
 \end{frame}
 
-\section{Main Content}
+\section{Value vs. Cost}
 
 \begin{frame}{Main Content}
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
   \begin{itemize}
     \item Bullet point 1
     \item Bullet point 2
@@ -55,7 +92,12 @@
   \end{itemize}
 \end{frame}
 
-\begin{frame}{Main Content}
+\begin{frame}{What next?}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
   \begin{enumerate}
     \item Item 1
     \item Item 2
@@ -66,10 +108,20 @@
 \section{Conclusion}
 
 \begin{frame}{Conclusion}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
   This is the conclusion slide.
 \end{frame}
 
 \begin{frame}{Thank You}
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
   \centering
   \Huge Thank you for your attention!
 \end{frame}
