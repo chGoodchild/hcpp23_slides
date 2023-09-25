@@ -87,6 +87,8 @@
   \caption{The internet}
   \end{figure}
 
+  \pause
+
   \vspace*{-0.5cm} % Adjust the length as needed
 
   \begin{table}[htbp]
@@ -197,36 +199,41 @@
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
-    \vspace{-2cm} % Adjust the vertical space as needed
+  \vspace{-2cm} % Adjust the vertical space as needed
 
-  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.4\textwidth} % Adjust the width as needed
 
-    \begin{tikzpicture}
-      % Define triangle coordinates
-      \coordinate (A) at (0,0);
-      \coordinate (B) at (2,0);
-      \coordinate (C) at (1,2);
+    \begin{figure}
+      \begin{tikzpicture}
+        % Define triangle coordinates
+        \coordinate (A) at (0,0);
+        \coordinate (B) at (2,0);
+        \coordinate (C) at (1,2);
 
-      % Draw the isosceles triangle
-      \draw[fill=orange] (A) -- (B) -- (C) -- cycle;
+        % Draw the isosceles triangle
+        \draw[fill=orange] (A) -- (B) -- (C) -- cycle;
 
-      % Label the corners
-      \node[below] at (A) {$Range$};
-      \node[below] at (B) {$Permission$};
-      \node[above] at (C) {$Bandwidth$};
-    \end{tikzpicture}
+        % Label the corners
+        \node[below] at (A) {$Range$};
+        \node[below] at (B) {$Permission$};
+        \node[above] at (C) {$Bandwidth$};
+      \end{tikzpicture}
+      \caption{We only get two at a time}
+    \end{figure}
 
-  \end{minipage}
-  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+  \end{minipage} %
+  \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
     \setlength{\parskip}{10pt} % Adjust the value to increase or decrease space
 
-bla bla test
+    \pause
 
-  \end{minipage}%
+    Why no permission? \\
+      -- yelling on all frequencies...
+
+  \end{minipage}
 
 
 \end{frame}
-
 
 \section{Message Value and Cost}
 
