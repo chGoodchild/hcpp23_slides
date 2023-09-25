@@ -3,7 +3,11 @@
 \usepackage{circuitikz}
 \usetikzlibrary{arrows}
 %\usepackage{enumitem}
+\usepackage{cmtt}
+\usetikzlibrary{positioning}
 
+
+\definecolor{bitcoinorange}{RGB}{255,165,0}
 
 % Define a subcircuit 'divider' with input and output
 \ctikzsubcircuitdef{divider}{in, out}{%
@@ -43,7 +47,54 @@
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
-  \vspace{-2cm} % Adjust the vertical space as needed
+    \tableofcontents
+
+\end{frame}
+
+\section{Infrastructure Tree}
+
+\begin{frame}{Introduction}
+  This is the introduction slide.
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
+\begin{center}
+
+\begin{tikzpicture}[-latex, auto, node distance=4cm and 5cm, semithick,
+  state/.style={circle, top color=white, bottom color=bitcoinorange,
+  draw=bitcoinorange, text=blue, minimum width=1cm}]
+
+  \node[state] (AS1) {AS1};
+  \node[state] (AS2) [above right=of AS1] {AS2};
+  \node[state] (AS3) [below right=of AS1] {AS3};
+
+  \path (AS1) edge [bend left=25] node[above] {} (AS2);
+  \path (AS2) edge [bend left=25] node[below] {} (AS1);
+
+  \path (AS1) edge [bend left=25] node[above] {} (AS3);
+  \path (AS3) edge [bend left=25] node[below] {} (AS1);
+
+  \path (AS2) edge [bend left=25] node[above] {} (AS3);
+  \path (AS3) edge [bend left=25] node[below] {} (AS2);
+\end{tikzpicture}
+\end{center}
+
+
+\end{frame}
+
+\section{Tradeoffs}
+
+
+\begin{frame}{Introduction}
+  This is the introduction slide.
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
+    \vspace{-2cm} % Adjust the vertical space as needed
 
   \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
     \setlength{\parskip}{10pt} % Adjust the value to increase or decrease space
@@ -65,28 +116,7 @@
       \node[above] at (C) {$Bandwidth$};
     \end{tikzpicture}
   \end{minipage}
-\end{frame}
 
-\section{Infrastructure Tree}
-
-\begin{frame}{Introduction}
-  This is the introduction slide.
-
-  \begin{tikzpicture}[remember picture,overlay]
-    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
-  \end{tikzpicture}
-
-\end{frame}
-
-\section{Tradeoffs}
-
-
-\begin{frame}{Introduction}
-  This is the introduction slide.
-
-  \begin{tikzpicture}[remember picture,overlay]
-    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
-  \end{tikzpicture}
 
 \end{frame}
 
