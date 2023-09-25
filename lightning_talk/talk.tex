@@ -1,5 +1,7 @@
 \documentclass{beamer}
 \usetheme{DarkConsole}
+\usepackage{circuitikz}
+\usetikzlibrary{arrows}
 
 % Title page information
 \title{Your Presentation Title}
@@ -20,6 +22,84 @@
 
 \begin{frame}{Introduction}
   This is the introduction slide.
+
+  \begin{center}
+
+\begin{circuitikz}[american, scale=0.7, transform shape]
+  \draw
+  (0,0) to[R, l=$Z_L$] (0,3)
+  to[short] (3,3)
+  to[R, l=$Z_s$] (3,0)
+  to[short] (0,0)
+
+  (3,3) to[short, -o] (5,3) node[above] (a) {a}
+  (3,0) to[short, -o] (5,0) node[below] (b) {b}
+  ;
+
+  \draw[>=angle 90,<->,red,
+        shorten <=1mm, shorten >=1mm] (a) to node [fill=white] {$V_L$} (b);
+
+  \draw[->, red] (0,3) -- (0,0) node[midway, left] {$V_s$};
+\end{circuitikz}
+
+	\begin{circuitikz}
+		% Coordinates
+		\coordinate (A) at (0,0);
+		\coordinate (B) at (0,3);
+		\coordinate (C) at (6,3);
+		\coordinate (D) at (6,0);
+
+		% Circuit
+		\draw (A) to[R, l_=$Z_s$, v^<, name=z_s] (B)
+		      to[R, l_=$Z_L$, v^<, name=z_l, *-*] (C)
+		      to[short, -o] (D);
+
+		% Voltages
+		\fixedvlen[0.4cm]{z_s}{$V_s$}
+		\fixedvlen[0.6cm]{z_l}{$V_L$}
+	\end{circuitikz}
+
+\begin{circuitikz}[american, scale=0.7, transform shape]
+  \draw
+  (0,0) to[R, l=$Z_L$] (0,3)
+  to[short] (3,3)
+  to[R, l=$Z_s$] (3,0)
+  to[short] (0,0)
+
+  (3,3) to[short, -o] (5,3) node[above] (a) {a}
+  (3,0) to[short, -o] (5,0) node[below] (b) {b}
+  ;
+
+  \draw[>=angle 90,<->,red,
+        shorten <=1mm, shorten >=1mm] (a) to node [fill=white] {$V_L$} (b);
+
+  \draw[->, red] (0,3) -- (0,0) node[midway, left] (a1) {$V_s$};
+  \node[above=0.3cm of a1] (a2) {a};
+  \node[below=0.3cm of a1] (b1) {b};
+\end{circuitikz}
+
+\begin{circuitikz}[american, scale=0.7, transform shape]
+  \draw
+  (0,0) to[R, l=$Z_L$] (0,3)
+  to[short] (3,3)
+  to[R, l=$Z_s$] (3,0)
+  to[short] (0,0)
+
+  (3,3) to[short, -o] (5,3) node[above] (a) {a}
+  (3,0) to[short, -o] (5,0) node[below] (b) {b}
+  ;
+
+  \draw[>=angle 90,<->,red,
+        shorten <=1mm, shorten >=1mm] (a) to node [fill=white] {$V_L$} (b);
+
+  \draw[->, red] (0,3) -- (0,0) node[midway, left] (a2) {$V_s$};
+
+  % Adding points 'a' and 'b' on both sides of the 'Vs' arrow
+  \node at (-1,1.5) (a1) {a};
+  \node at (6,1.5) (b1) {b};
+\end{circuitikz}
+  \end{center}
+
 \end{frame}
 
 \section{Main Content}
