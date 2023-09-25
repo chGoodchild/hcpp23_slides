@@ -5,6 +5,8 @@
 %\usepackage{enumitem}
 \usepackage{cmtt}
 \usetikzlibrary{positioning}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 
 
 \definecolor{bitcoinorange}{RGB}{255,165,0}
@@ -59,7 +61,7 @@
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
-  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.4\textwidth} % Adjust the width as needed
 \begin{figure}
   \centering
   \begin{tikzpicture}[-latex, auto, node distance=1cm and 2cm, semithick,
@@ -80,11 +82,41 @@
     \path (AS3) edge [bend left=25] node[below] {} (AS2);
   \end{tikzpicture}
   \caption{Internet as Autonomous Systems (AS) in a \textbf{flat hierarchy}}
-\end{figure}
+  \end{figure}
   \end{minipage}%
-  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
 
-Test bla bla
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[-latex, auto, semithick,
+    state/.style={circle, top color=white, bottom color=bitcoinorange,
+    draw=bitcoinorange, text=blue, minimum width=1cm},
+    level/.style={sibling distance=3cm/#1, level distance=1.5cm}
+  ]
+
+    \node[state] (IXP) {IXP}
+    child {
+      node[state] (T1) {T1}
+      child {
+        node[state] (T2) {T2}
+      }
+      child {
+        node[state] (CDN) {CDN}
+      }
+    }
+    child {
+      node[state] (T1) {T1}
+      child {
+        node[state] (T2) {T2}
+      }
+      child {
+        node[state] (CP) {CP}
+      }
+    };
+
+  \end{tikzpicture}
+  \caption{Internet Hierarchy}
+\end{figure}
 
   \end{minipage}%
 
