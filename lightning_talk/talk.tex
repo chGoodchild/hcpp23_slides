@@ -89,39 +89,31 @@
 
   \vspace*{-0.5cm} % Adjust the length as needed
 
-\begin{table}[htbp]
-  \centering
-  \tiny %\footnotesize % or \small
-  \begin{tabular}{|c|p{4.25cm}|}
-    \hline
-    % \rowcolor{gray!95} % Match IXP node color
-    \textbf{Term} & \textbf{Explanation} \\
-    \hline
-    % \rowcolor{gray!70} % Match T1 node color
-    AS & \mbox{Autonomous System (AT\&T Services, Inc.)} \\
-    \hline
-    IXP & Internet Exchange Point (DE-CIX) \\
-    \hline
-    % \rowcolor{gray!50} % Match T2 node color
-    T1 & International ISP (CenturyLink) \\
-    \hline
-    % \rowcolor{gray!30} % Match T3 node color
-    T2 & Regional ISP (Orange) \\
-    \hline
-    % \rowcolor{gray!30} % Match T3 node color
-    CDN & Content Delivery Network (Cloudflare) \\
-    \hline
-    % \rowcolor{bitcoinorange} % Match P node color
-    CP & Content Provider (Netflix) \\
-    \hline
-    % \rowcolor{gray!30} % Match T3 node color
-    T3 & Local ISP \\
-    \hline
-    % \rowcolor{bitcoinorange} % Match P node color
-    P & Pleb \\
-    \hline
-  \end{tabular}
-\end{table}
+  \begin{table}[htbp]
+    \centering
+    \tiny %\footnotesize % or \small
+    \begin{tabular}{|c|p{4.25cm}|}
+      \hline
+      \textbf{Term} & \textbf{Explanation} \\
+      \hline
+      \textcolor{bitcoinorange}{AS} & \mbox{\textcolor{bitcoinorange}{Autonomous System (AT\&T Services, Inc.)}} \\
+      \hline
+      \textcolor{gray!95}{IXP} & \textcolor{gray!95}{Internet Exchange Point (DE-CIX)} \\
+      \hline
+      \textcolor{gray!70}{T1} & \textcolor{gray!70}{International ISP (CenturyLink)} \\
+      \hline
+      \textcolor{gray!50}{T2} & \textcolor{gray!50}{Regional ISP (Orange)} \\
+      \hline
+      \textcolor{gray!50}{CDN} & \textcolor{gray!50}{Content Delivery Network (Cloudflare)} \\
+      \hline
+      \textcolor{gray!50}{CP} & \textcolor{gray!50}{Content Provider (Netflix)} \\
+      \hline
+      \textcolor{gray!30}{T3} & \textcolor{gray!15}{Local ISP} \\
+      \hline
+      \textcolor{bitcoinorange}{P} & \textcolor{bitcoinorange}{Pleb} \\
+      \hline
+    \end{tabular}
+  \end{table}
 
   \end{minipage}%
   \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
@@ -158,7 +150,7 @@
         }
       }
       child {
-        node[state={20}{gray!30}] (CDN) {CDN}
+        node[state={20}{gray!50}] (CDN) {CDN}
       }
     }
     child {
@@ -185,7 +177,7 @@
         }
       }
       child {
-        node[state={20}{gray!30}] (CP) {CP}
+        node[state={20}{gray!50}] (CP) {CP}
       }
     };
 
@@ -199,7 +191,7 @@
 \section{Tradeoffs}
 
 
-\begin{frame}{Introduction}
+\begin{frame}{The tradeoffs that got us here..}
 
   \begin{tikzpicture}[remember picture,overlay]
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
@@ -208,10 +200,7 @@
     \vspace{-2cm} % Adjust the vertical space as needed
 
   \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
-    \setlength{\parskip}{10pt} % Adjust the value to increase or decrease space
-    \tableofcontents
-  \end{minipage}%
-  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+
     \begin{tikzpicture}
       % Define triangle coordinates
       \coordinate (A) at (0,0);
@@ -226,7 +215,14 @@
       \node[below] at (B) {$Permission$};
       \node[above] at (C) {$Bandwidth$};
     \end{tikzpicture}
+
   \end{minipage}
+  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+    \setlength{\parskip}{10pt} % Adjust the value to increase or decrease space
+
+bla bla test
+
+  \end{minipage}%
 
 
 \end{frame}
