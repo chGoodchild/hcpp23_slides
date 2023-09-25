@@ -81,69 +81,103 @@
     \path (AS2) edge [bend left=25] node[above] {} (AS3);
     \path (AS3) edge [bend left=25] node[below] {} (AS2);
   \end{tikzpicture}
-  \caption{Internet as Autonomous Systems (AS) in a \textbf{flat hierarchy}}
+  \caption{Flat Hierarchy}
   \end{figure}
+
+  \begin{table}[htbp]
+  \centering
+  \begin{tabular}{|c|p{8cm}|}
+    \hline
+    \textbf{Term} & \textbf{Explanation} \\
+    \hline
+    AS & Autonomous System \\
+    \hline
+    IXP & Internet Exchange Point \\
+    \hline
+    CDN & Content Delivery Network \\
+    CP & Content Provider \\
+    \hline
+    T1 & Tier 1 Internet Service Provider \\
+    T2 & Tier 2 Internet Service Provider \\
+    T3 & Tier 3 Internet Service Provider \\
+    \hline
+    P & Pleb \\
+    \hline
+  \end{tabular}
+  \caption{Table of Terms and Explanations}
+\end{table}
+
+
   \end{minipage}%
   \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
 
 \begin{figure}
   \centering
   \begin{tikzpicture}[-latex, auto, semithick,
-    state/.style={circle, top color=white, bottom color=bitcoinorange,
-    draw=bitcoinorange, text=blue, minimum width=1cm},
-    level/.style={sibling distance=3cm/#1, level distance=1.5cm}
+    state/.style 2 args={
+      circle,
+      top color=white,
+      bottom color=##2,
+      draw=gray!#1!black,
+      text=blue,
+      minimum width=1cm,
+    },
+    level 1/.style={sibling distance=3cm, level distance=1.5cm},
+    level 2/.style={sibling distance=1.5cm, level distance=1.5cm},
+    level 3/.style={sibling distance=1cm, level distance=1.5cm}
   ]
 
-    \node[state] (IXP) {IXP}
+    \node[state={80}{gray!95}] (IXP) {IXP}
     child {
-      node[state] (T1) {T1}
+      node[state={60}{gray!70}] (T1) {T1}
       child {
-        node[state] (T2) {T2}
+        node[state={40}{gray!50}] (T2) {T2}
         child {
-          node[state] (T3) {T3}
+          node[state={20}{gray!30}] (T3) {T3}
           child {
-            node[state] (P) {P}
+            node[state={0}{bitcoinorange}] (P) {P}
           }
           child {
-            node[state] (P) {P}
+            node[state={0}{bitcoinorange}] (P) {P}
           }
         }
       }
       child {
-        node[state] (CDN) {CDN}
+        node[state={20}{gray!30}] (CDN) {CDN}
       }
     }
     child {
-      node[state] (T1) {T1}
+      node[state={60}{gray!70}] (T1) {T1}
       child {
-        node[state] (T2) {T2}
+        node[state={40}{gray!50}] (T2) {T2}
         child {
-          node[state] (T3) {T3}
+          node[state={20}{gray!30}] (T3) {T3}
           child {
-            node[state] (P) {P}
+            node[state={0}{bitcoinorange}] (P) {P}
           }
           child {
-            node[state] (P) {P}
+            node[state={0}{bitcoinorange}] (P) {P}
           }
         }
         child {
-          node[state] (T3) {T3}
+          node[state={20}{gray!30}] (T3) {T3}
           child {
-            node[state] (P) {P}
+            node[state={0}{bitcoinorange}] (P) {P}
           }
           child {
-            node[state] (P) {P}
+            node[state={0}{bitcoinorange}] (P) {P}
           }
         }
       }
       child {
-        node[state] (CP) {CP}
+        node[state={20}{gray!30}] (CP) {CP}
       }
     };
 
   \end{tikzpicture}
   \caption{Internet Hierarchy}
 \end{figure}
+
 
   \end{minipage}%
 
