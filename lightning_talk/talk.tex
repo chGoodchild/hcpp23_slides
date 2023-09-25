@@ -9,6 +9,7 @@
 \usepackage{lmodern}
 \usepackage{makecell}
 % \usepackage[table]{xcolor}
+\usepackage{ulem}
 
 \definecolor{bitcoinorange}{RGB}{255,165,0}
 
@@ -201,39 +202,73 @@
 
   \vspace{-2cm} % Adjust the vertical space as needed
 
-  \begin{minipage}[t]{0.4\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.45\textwidth} % Adjust the width as needed
 
-    \begin{figure}
-      \begin{tikzpicture}
-        % Define triangle coordinates
-        \coordinate (A) at (0,0);
-        \coordinate (B) at (2,0);
-        \coordinate (C) at (1,2);
+\begin{figure}
+  \begin{tikzpicture}
+    % Define triangle coordinates
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (2,0);
+    \coordinate (C) at (1,2);
 
-        % Draw the isosceles triangle
-        \draw[fill=orange] (A) -- (B) -- (C) -- cycle;
+    % Draw the rotated isosceles triangle
+    \draw[fill=orange,rotate=45] (A) -- (B) -- (C) -- cycle;
 
-        % Label the corners
-        \node[below] at (A) {$Range$};
-        \node[below] at (B) {$Permission$};
-        \node[above] at (C) {$Bandwidth$};
-      \end{tikzpicture}
-      \caption{We only get two at a time}
-    \end{figure}
+    % Label the corners with line breaks
+    \node[below] at (A) {Range};
+    \node[below] at (B) {Permission};
+    \node[above] at (C) {Bandwidth};
+  \end{tikzpicture}
+  \caption{Maximum two at a time}
+\end{figure}
 
-  \end{minipage} %
-  \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
+    %\uwave{Examples of Combinations}
+    %\uline{This text is underlined.}
+    %\uuline{This text has a double underline.}
+    %\uwave{This text has a wavy underline.}
+
+\begin{table}[htbp]
+  \centering
+  \caption{\mbox{Examples (Omni-Directional)}}
+  \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Permission} & \textbf{Bandwidth} & \textbf{Range} & \textbf{example} \\
+    \hline
+    Yes & Yes & Yes & Yes \\
+    \hline
+    Yes & Yes & No & No \\
+    \hline
+    Yes & No & Yes & Yes \\
+    \hline
+    Yes & No & No & No \\
+    \hline
+    No & Yes & Yes & Yes \\
+    \hline
+    No & Yes & No & No \\
+    \hline
+    No & No & Yes & Yes \\
+    \hline
+    No & No & No & No \\
+    \hline
+  \end{tabular}
+\end{table}
+
+
+  \end{minipage}%
+  \begin{minipage}[t]{0.55\textwidth} % Adjust the width as needed
     \setlength{\parskip}{10pt} % Adjust the value to increase or decrease space
 
     \pause
-
     Why no permission? \\
-      -- yelling on all frequencies...
+    \pause
+      -- yelling on all frequencies..
 
   \end{minipage}
 
 
 \end{frame}
+
+
 
 \section{Message Value and Cost}
 
