@@ -2,6 +2,7 @@
 \usetheme{DarkConsole}
 \usepackage{circuitikz}
 \usetikzlibrary{arrows}
+%\usepackage{enumitem}
 
 
 % Define a subcircuit 'divider' with input and output
@@ -42,11 +43,13 @@
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
+  \vspace{-2cm} % Adjust the vertical space as needed
 
-  \begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+    \setlength{\parskip}{10pt} % Adjust the value to increase or decrease space
     \tableofcontents
   \end{minipage}%
-  \begin{minipage}[t]{0.4\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
     \begin{tikzpicture}
       % Define triangle coordinates
       \coordinate (A) at (0,0);
@@ -64,6 +67,16 @@
   \end{minipage}
 \end{frame}
 
+\section{Infrastructure Tree}
+
+\begin{frame}{Introduction}
+  This is the introduction slide.
+
+  \begin{tikzpicture}[remember picture,overlay]
+    \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
+  \end{tikzpicture}
+
+\end{frame}
 
 \section{Tradeoffs}
 
@@ -75,10 +88,10 @@
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
-
 \end{frame}
 
-\section{Value vs. Cost}
+
+\section{Message Value and Cost}
 
 \begin{frame}{Main Content}
   \begin{tikzpicture}[remember picture,overlay]
@@ -105,7 +118,7 @@
   \end{enumerate}
 \end{frame}
 
-\section{Conclusion}
+\section{What next?}
 
 \begin{frame}{Conclusion}
 
