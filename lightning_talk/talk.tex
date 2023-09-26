@@ -10,6 +10,7 @@
 \usepackage{makecell}
 % \usepackage[table]{xcolor}
 \usepackage{ulem}
+\usepackage{caption}
 
 \definecolor{bitcoinorange}{RGB}{255,165,0}
 
@@ -200,9 +201,9 @@
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
-  \vspace{-2cm} % Adjust the vertical space as needed
+  %\vspace{-1cm} % Adjust the vertical space as needed
 
-  \begin{minipage}[t]{0.45\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
 
 \begin{figure}
   \begin{tikzpicture}
@@ -219,51 +220,57 @@
     \node[below] at (B) {Permission};
     \node[above] at (C) {Bandwidth};
   \end{tikzpicture}
-  \caption{Maximum two at a time}
+  \captionsetup{font=scriptsize} % Add this line to set the caption size
+  \caption{\mbox{Maximum two at a time}}
 \end{figure}
 
     %\uwave{Examples of Combinations}
     %\uline{This text is underlined.}
     %\uuline{This text has a double underline.}
     %\uwave{This text has a wavy underline.}
+  \vspace{-0.5cm} % Adjust the vertical space as needed
 
 \begin{table}[htbp]
   \centering
-  \caption{\mbox{Examples (Omni-Directional)}}
+  \captionsetup{font=scriptsize} % Add this line to set the caption size
+  \caption{\mbox{Examples (Omni-Directional \& encrypted)}}
+  %\caption{\mbox{Examples (Omni-Directional \& encrypted)}}
+  \tiny % Add this line to set the table to footnote size
+  %\footnotesize % Add this line to set the table to footnote size
   \begin{tabular}{|c|c|c|c|}
     \hline
-    \textbf{Permission} & \textbf{Bandwidth} & \textbf{Range} & \textbf{example} \\
+    \textbf{Permission} & \textbf{Bandwidth} & \textbf{Range} & \textbf{Example} \\
     \hline
-    Yes & Yes & Yes & Yes \\
+    Yes & Yes & No & WiFi \\
     \hline
-    Yes & Yes & No & No \\
+    Yes & No & Yes & LoRa \\
     \hline
-    Yes & No & Yes & Yes \\
-    \hline
-    Yes & No & No & No \\
-    \hline
-    No & Yes & Yes & Yes \\
-    \hline
-    No & Yes & No & No \\
-    \hline
-    No & No & Yes & Yes \\
-    \hline
-    No & No & No & No \\
+    No & Yes & Yes & Ham Radio \\
     \hline
   \end{tabular}
 \end{table}
 
-
   \end{minipage}%
-  \begin{minipage}[t]{0.55\textwidth} % Adjust the width as needed
-    \setlength{\parskip}{10pt} % Adjust the value to increase or decrease space
+\begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+    \small % Adjust the font size here
+    \setlength{\parskip}{6pt} % Adjust the value to increase or decrease space
 
     \pause
     Why no permission? \\
     \pause
-      -- yelling on all frequencies..
+      -- yelling on all frequencies\\
 
-  \end{minipage}
+    \pause
+    How do we solve this? \\
+    \pause
+      -- directional links and cables\\
+
+    Cost of directional links: \\
+      -- how much do you communicate?\\
+      -- cost of link to each peer?\\
+      -- $\Rightarrow$ hierarchy with encryption\\
+
+\end{minipage}
 
 
 \end{frame}
