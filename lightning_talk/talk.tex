@@ -203,7 +203,7 @@
 
   %\vspace{-1cm} % Adjust the vertical space as needed
 
-  \begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+  \begin{minipage}[t]{0.4\textwidth} % Adjust the width as needed
 
 \begin{figure}
   \begin{tikzpicture}
@@ -251,24 +251,32 @@
 \end{table}
 
   \end{minipage}%
-\begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+\begin{minipage}[t]{0.6\textwidth} % Adjust the width as needed
     \small % Adjust the font size here
     \setlength{\parskip}{6pt} % Adjust the value to increase or decrease space
 
+  \begin{itemize}
     \pause
-    Why no permission? \\
+    \item Why no permission?
     \pause
-      -- yelling on all frequencies\\
+    \begin{enumerate}[(a)]
+    \item yelling on all frequencies
+    \end{enumerate}
 
     \pause
-    How do we solve this? \\
+    \item How do we solve this?
     \pause
-      -- directional links and cables\\
+    \begin{enumerate}[(a)]
+    \item directional links and cables
+    \end{enumerate}
 
-    Cost of directional links: \\
-      -- how much do you communicate?\\
-      -- cost of link to each peer?\\
-      -- $\Rightarrow$ hierarchy with encryption\\
+    \item Cost of directional links:
+    \begin{enumerate}[(a)]
+      \item how much do you communicate?
+      \item cost of link to each peer?
+      \item $\Rightarrow$ hierarchy with encryption
+    \end{enumerate}
+  \end{itemize}
 
 \end{minipage}
 
@@ -284,11 +292,87 @@
     \draw ([yshift=-0.8cm,xshift=-2.9cm]current page.north east) \mydiv{a}{in}{}{};
   \end{tikzpicture}
 
-  \begin{itemize}
-    \item Bullet point 1
-    \item Bullet point 2
-    \item Bullet point 3
-  \end{itemize}
+\begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+    \small % Adjust the font size here
+    \setlength{\parskip}{6pt} % Adjust the value to increase or decrease space
+
+\begin{figure}
+  \centering
+  \begin{tikzpicture}[-latex, auto, semithick,
+    state/.style 2 args={
+      circle,
+      top color=white,
+      bottom color=##2,
+      draw=gray!#1!black,
+      text=blue,
+      minimum width=1cm,
+    },
+    level 1/.style={sibling distance=3cm, level distance=1.5cm},
+    level 2/.style={sibling distance=1.5cm, level distance=1.5cm},
+    level 3/.style={sibling distance=1cm, level distance=1.5cm}
+  ]
+
+    \node[state={80}{gray!95}] (IXP) {IXP}
+    child {
+      node[state={60}{gray!70}] (T1) {T1}
+      child {
+        node[state={40}{gray!50}] (T2) {T2}
+        child {
+          node[state={20}{gray!30}] (T3) {T3}
+          child {
+            node[state={0}{bitcoinorange}] (P) {P}
+          }
+          child {
+            node[state={0}{bitcoinorange}] (P) {P}
+          }
+        }
+      }
+      child {
+        node[state={20}{gray!50}] (CDN) {CDN}
+      }
+    }
+    child {
+      node[state={60}{gray!70}] (T1) {T1}
+      child {
+        node[state={40}{gray!50}] (T2) {T2}
+        child {
+          node[state={20}{gray!30}] (T3) {T3}
+          child {
+            node[state={0}{bitcoinorange}] (P) {P}
+          }
+          child {
+            node[state={0}{bitcoinorange}] (P) {P}
+          }
+        }
+        child {
+          node[state={20}{gray!30}] (T3) {T3}
+          child {
+            node[state={0}{bitcoinorange}] (P) {P}
+          }
+          child {
+            node[state={0}{bitcoinorange}] (P) {P}
+          }
+        }
+      }
+      child {
+        node[state={20}{gray!50}] (CP) {CP}
+      }
+    };
+
+  \end{tikzpicture}
+\end{figure}
+
+
+\end{minipage}%
+\begin{minipage}[t]{0.5\textwidth} % Adjust the width as needed
+    \small % Adjust the font size here
+    \setlength{\parskip}{6pt} % Adjust the value to increase or decrease space
+
+
+\end{minipage}%
+
+
+
 \end{frame}
 
 \begin{frame}{What next?}
