@@ -16,8 +16,8 @@
 
 % Define a subcircuit 'divider' with input and output
 \ctikzsubcircuitdef{divider}{in, out}{%
-  coordinate (#1-in) to[R, l=$Z_s$, name=#1-rh, -*] ++(2,0)
-  coordinate(#1-tmp) to[R, l=$Z_L$, name=#1-rl] ++(0,-2)
+  coordinate (#1-in) to[R, l=$Z_S$, color=bitcoinorange, name=#1-rh, -*] ++(2,0)
+  coordinate(#1-tmp) to[R, l=$Z_L$, color=bitcoinorange, name=#1-rl] ++(0,-2)
   node[tlground]{} (#1-tmp) --++(0.5,0) coordinate(#1-out)
 }
 
@@ -26,7 +26,6 @@
   \divider{#1}{#2} (#1-rh.n) node[above] {$#3$}
   (#1-rl.n) node[right] {$#4$} (#1-out)
 }
-
 
 % Title page information
 \title{Self Sovereign Communications Infrastructure?}
@@ -426,7 +425,7 @@ $\Rightarrow$ Plebs can afford their own infrastructure!
   \end{tikzpicture}
 
   \centering
-  \Huge What do you think is needed most right now?
+  \Huge What do you think is most needed right now?
 
 \end{frame}
 
